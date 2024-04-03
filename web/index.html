@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAYWU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loader.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <h1>R A Y W U</h1>
+        </div>
+        <menu>
+            <ul>
+                <li class="List"><a href="#">回到首頁</a></li>
+                <li class="List"><a href="#about">關於我</a></li>
+                <li class="List"><a href="#certificate">證照</a></li>
+                <li class="List"><a href="#portfolios">作品集</a></li>
+                <li class="List"><a href="#active">生活合集</a></li>
+                <li class="List"><a href="#contact">聯絡方式</a></li>
+            </ul>
+        </menu>
+        <nav>
+            <!-- 手機版(三條線) -->
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </nav>
+    </header>
+    <!-- HTML+CSS+JS -->
+    <div id="theme">
+        <div id="slide">
+            <div class="slide clear">
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+            </div>
+        </div>
+        <div class="box">
+            <!-- checked:預先選定 -->
+            <input type="radio" name="pic" value="0" class="item" checked>
+            <input type="radio" name="pic" value="1" class="item">
+            <input type="radio" name="pic" value="2" class="item">
+            <input type="radio" name="pic" value="3" class="item">
+            <input type="radio" name="pic" value="4" class="item">
+        </div>
+        <!-- fontawesome:https://fontawesome.com/icons/chevron-left?f=classic&s=solid -->
+        <!-- arrow:上一層 -->
+        <div id="pre" class="fa-solid fa-chevron-left"></div>
+        <!-- arrow:下一層 -->
+        <div id="next" class="fa-solid fa-chevron-right"></div>
+
+        <div class="push">
+            <h2>R A Y W U</h2>
+            <p>
+                大家好，歡迎來到我的網站!
+                <br>這邊可以看到我的生活、喜好、作品、證照。
+            </p>
+            <a href="#about" class="btn-theme">瞭解更多</a>
+        </div>
+        <div id="about" class="flex">
+            <div class="grid-10 grid-md-5">
+                <h2>關於我</h2>
+                <p>我對自己的人生規劃是30歲以前努力工作，偶爾跟朋友出去玩玩，留下美好的青春。</p>
+            </div>
+            <div class="grid-10 grid-md-5">
+                <p>我是一個喜歡挑戰跟嘗試的人，其實曾經我也懷疑過適不適合走這條路，不過出社會後做了幾份工作後，才發現很多工作做到後面就是沒有目的的在消耗自己，對我來說我要的是新鮮感，於是在工作一年後，我依然決定選擇這條艱難的路繼續走。</p>
+                <p>如果有一天經濟條件也好了，我希望能夠好好去完成這幾年想完成卻沒辦法完成的心願，我不希望帶著遺憾老去。</p>
+            </div>
+            <div class="flex">
+                <!-- fontawersome:leaf -->
+                <div class="grid-10 grid-md-3">
+                    <!-- 加上fa-?x -> ?倍 -->
+                    <i class="fa-solid fa-star fa-3x"></i>
+                    <h3>近期目標</h3>
+                    <p>目前希望先發展前端跟後端開發，之後會朝全端發展。
+                    </p>
+                </div>
+                <div class="grid-10 grid-md-4">
+                    <!-- 加上fa-?x -> ?倍 -->
+                    <i class="
+                    fa-solid fa-headphones fa-3x"></i>
+                    <h3>興趣開發</h3>
+                    <p>目前正在學滑板，隨然短期內可以練習的時間不多，不過很享受飛越的刺激。</p>
+                </div>
+                <div class="grid-10 grid-md-3">
+                    <!-- 加上fa-?x -> ?倍 -->
+                    <i class="fa-brands fa-pagelines fa-3x"></i>
+                    <h3>未來目標</h3>
+                    <p>明年或後年存夠錢學衝浪。</p>
+                </div>
+            </div>
+        </div>
+        <div id="certificate" class="flex">
+            <div class="grid-12">
+                <h2>證照</h2>
+                <p>目前正在準備爬蟲及java的相關證照。</p>
+            </div>
+            <div class="grid-6 grid-md-4 grid-lg-2">
+                <img src="images/5.jpg" alt="" width="500" height="250" style="transform:rotate(-90deg)">
+                <h3>TQC+軟體開發知識</h3>
+            </div>
+        </div>
+    <div id="portfolios">
+        <div class="flex">
+            <div class="grid-10 grid-md-7 grid-lg-9">
+                <h2>作品集</h2>
+                <p>
+                    這裡包含了大學時期，以及出社會後所寫的程式。
+                </p>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="grid-10 grid-md-7 grid-lg-3">
+                <img src="images/2.jpg" alt="" width="300" height="190">
+                <h3>資料分析</h3>
+                <p>主要是網頁爬蟲與資料分析</p>
+                <a href="https://github.com/s1063724/2024python_analysis" target="_blank" class="btn-theme">了解更多</a>
+            </div>
+            <div class="grid-10 grid-md-7 grid-lg-3">
+                <img src="images/3.jpg" alt="" width="300" height="190">
+                <h3>智慧無人機偵測小花蔓澤蘭</h3>
+                <p>這是大學時期的作品，主要是應用無人機進行小花蔓澤蘭的辨識，運用了yolo、roslam、sklearn等等技術，未來有機會，還會繼續專研人工智慧。</p>
+                <a href="https://github.com/s1063724/Smart-drone-classification-technology" target="_blank"
+                    class="btn-theme">了解更多</a>
+            </div>
+            <div class="grid-10 grid-md-7 grid-lg-3">
+                <img src="images/4.jpg" alt="" width="300" height="190">
+                <h3>中古車價錢預測</h3>
+                <p>這是一個網頁爬蟲的練習，最終也做了一點簡單的價錢預測，另外也分享kaggle網站，是個很棒的資料集網站。</p>
+                <a href="https://github.com/s1063724/GetCarPrice" target="_blank" class="btn-theme">了解更多</a>
+            </div>
+        </div>
+    </div>
+    <div id="show" class="flex">
+        <div class="grid-12 grid-lg-6">
+            <h2>最新消息</h2>
+            <p>
+                近期在朝網頁開發發展，之後會努力在工作與生活找到平衡。
+            </p>
+            <a href="#" class="btn-special">前往觀看</a>
+        </div>
+    </div>
+    <div id="active" class="flex">
+        <div class="grid-12">
+            <h2>生活合集</h2>
+            <p>喜歡生活，熱愛生活!</p>
+            <a href="" class="btn-theme">了解更多</a>
+            <h5>
+                **這是歷年來覺得值得紀念的照片
+            </h5>
+        </div>
+        <div class="grid-10 grid-sm-9 grid-md-7 grid-lg-4">
+            <img src="images/6.jpg" alt="">
+            <div class="push">
+                <h3>東勢一日遊</h3>
+                <p>
+                    這天我們一起烤肉、唱歌、玩狼人殺、打打麻將，久久一聚，放鬆平時累積的壓力~
+                </p>
+                <a href="#" class="btn-line">前往了解</a>
+            </div>
+        </div>
+        <div class="grid-10 grid-sm-9 grid-md-7 grid-lg-4">
+            <img src="images/8.jpg" alt="">
+            <div class="push">
+                <h3>高美濕地</h3>
+                <p>自從大學後，就突然意識到很多小時候相處的美好都不見了，很想趕快給家人很棒的生活，但卻還無能為力。</p>
+                <a href="#" class="btn-line">前往了解</a>
+            </div>
+        </div>
+        <div class="grid-10 grid-sm-9 grid-md-7 grid-lg-4">
+            <img src="images/7.jpg" alt="">
+            <div class="push">
+                <h3>理髮店</h3>
+                <p>其實出了社會後，最想念的還是高中時期的同學們，不管是一起到旗津玩玩水，或是假日打打球，都是一段很無憂的日子。</p>
+                <a href="#" class="btn-line">前往了解</a>
+            </div>
+        </div>
+    </div>
+    <div id="contact" class="flex">
+        <div class="grid-10 grid-md-5 grid-lg-2">
+            <h3>個人簡介</h3>
+            <p>
+                我畢業於靜宜大學資工系，目前主要研究網頁前端，日後會慢慢的把後端的知識補齊，最終的目標是當一個全端開發者。
+            </p>
+            <p>
+                目前學過的知識有java oop、python webcrawer、python sklearn、github、linux、html、css、JS、MySql、Sqllite、word、execel、ppt
+            </p>
+        </div>
+        <div class="grid-10 grid-md-5 grid-lg-2">
+            <h3>聯絡資訊</h3>
+            <table>
+                <tr>
+                    <td><i class="fa-solid fa-location-dot"></i></td>
+                    <td>暫不提供</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-phone"></i></td>
+                    <td>
+                        （09）037-08-261<br>
+                        （07）7519-266
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-fax"></i></td>
+                    <td>目前沒有</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td><i class="fa-regular fa-envelope"></i></td>
+                    <td>1030598@gmail.com</td>
+                </tr>
+            </table>
+        </div>
+        <div class="grid-10 grid-md-5 grid-lg-2">
+            <h3>相關連結</h3>
+            <a href="https://github.com/s1063724/GetCarPrice">二手車價錢預測</a>
+            <hr>
+            <a href="https://hackmd.io/nCaL2j3WSgKVjn2R6Lz8XQ">yolov3</a>
+            <hr>
+            <a href="https://hackmd.io/IV2S4-mHSX6129-Ap-XAVw">MySql</a>
+            <hr>
+            <a href="https://github.com/s1063724/2024python_analysis">資料分析</a>
+            <hr>
+            <a href="https://hackmd.io/xuDSUx4OQKumy9pRELZBtQ">AndroidStudio練習</a>
+        </div>
+        <div class="grid-10 grid-md-5 grid-lg-2">
+            <h3>個人介紹</h3>
+            <a href="#">R A Y W U</a>
+            <p>
+                個人網站，運用RWD框架製作而成的小網站，內容簡單的介紹了一下我的技能以及興趣愛好。我會努力把自己做到最好!
+            </p>
+            <hr>
+            <a href="#about">關於我</a>
+            <p>
+                這裡明確的介紹了我，現在、未來，以及興趣，之後也將朝這個房像持續前進。
+            </p>
+        </div>
+    </div>
+    <footer>
+        Copyright &copy; <span class="year"></span> RAYWU. All rights reserved.<br>
+        版權所有 &copy; <span class="year"></span> 王耑王耑
+    </footer>
+</body>
+
+</html>
+<script src="js/slide.js"></script>
+<script src="js/loading.js"></script>
+<script src="js/menu.js"></script>
