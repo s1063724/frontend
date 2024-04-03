@@ -1,0 +1,719 @@
+/*css瀏覽器歸零:http://www.flycan.com/article/css/reset-css-562.html  */
+html,body,header,footer,main,article,aside,menu,nav,h1,h2,h3,h4,h5,h6,div,
+span,p,a,ul,ol,li,table,tr,td,th,button,input,img{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* inherit繼承父系元素 */
+    color: inherit;
+    /* 底線 */
+    text-decoration: none;
+    list-style: none;
+    /* 無襯線字 */
+    font-family: sans-serif;
+}
+html{
+    /* 滑動時緩動 */
+    scroll-behavior: smooth;
+}
+/* 露白問題 */
+img{
+    width: 100%;
+    vertical-align: bottom;
+}
+
+:root{
+    /* 主題顏色 */
+    --themeColor--: #23c8a7;
+    --themeColor1--: #04fc7c;
+    --themeColor2--: #19783a;
+    --themeColor3--: #a9e53970;
+    /* 文字顏色 */
+    --darkBlackColor--: #2B2B2B;
+    --lightBlackColor--: #585858;
+    --darkGrayColor--: #888888;
+    --lightGrayColor--: #DDDDDD;
+    --blackColor--: #111111;
+    --specialColor--:orangered;
+    --alphaBlack--:#0008;
+    --alphaWhite--:#FFF8;
+    /* 特效 */
+    --shadow--:3px 3px 5px Gray;
+    --transition--:all 600ms ease;
+}
+/* 按鈕 */
+/* class:前面文字(^)有btn的 */
+*[class^=btn]{
+    /* 按鈕可以出現在行內 */
+    display: inline-block;
+    width:auto;
+    padding:0.25em 1em;
+    margin:0.5em 0;
+    font-size: inherit;
+    font-weight: 900;
+    color :#FFF;
+    /* 線框 */
+    border: 1px solid var(--lightGrayColor--);
+    background-color: var(--lightGrayColor--);
+    box-shadow: var(--shadow--);
+    /* 手指頭 */
+    cursor: pointer;
+}
+/* 動畫 hover:碰到*/
+*[class^=btn]:hover{
+    filter:brightness(1.1);
+}
+/* active:按下去時出現效果 */
+*[class^=btn]:active{
+    /* inset轉換成內部 */
+    box-shadow: var(--shadow--) inset;
+}
+/* 主題按鈕 */
+.btn-theme{
+    background-color: var(--themeColor2--);
+    font-weight:bold;
+    border-radius:15%;
+    padding: 0.3em;
+    box-shadow: 3px 3px rgb(85, 85, 75);
+    color: #FFF;
+
+}
+.btn-special{
+    background-color: var(--specialColor--);
+    color:#FFF;
+    bottom: 1em;
+}
+.btn-line{
+    background-color: transparent;   
+}
+/* 彈性盒子 */
+.flex{
+    display: flex;
+    /* flex換行 */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.grid-1{
+    /* 做12格 */
+    width: calc(100% /12 * 1);
+}
+.grid-2{
+    width: calc(100% /12 * 2);
+}
+.grid-3{
+    width: calc(100% /12*3);
+}
+.grid-4{
+    width: calc(100% /12 *4 );
+}
+.grid-5{
+    width: calc(100% /12 * 5);
+}
+.grid-6{
+    width: calc(100% /12 * 6);
+}
+.grid-7{
+    width: calc(100% /12 * 7);
+}
+.grid-8{
+    width: calc(100% /12 * 8);
+}
+.grid-9{
+    width: calc(100% /12 * 9);
+}
+.grid-10{
+    width: calc(100% /12 * 10);
+}
+.grid-11{
+    width: calc(100% /12 * 11);
+}
+.grid-12{
+    width: calc(100% /12 * 12);
+}
+/* === header設計(手機版) ===*/
+header{
+    width: 100%;
+    height:64px;
+    line-height: 64px;
+    color: var(--lightBlackColor--);
+    background-color: var(--themeColor--);
+}
+header #logo{
+    width: 100%;
+    padding: 0 2em;
+}
+header menu{
+    width: 100%;
+    background-color: var(--darkBlackColor--);
+    color: var(--lightGrayColor--);
+    /* 初始不能顯示menu內容，後面再用js打開 */
+    display: none;
+    position: relative;
+    z-index: 30;
+}
+header menu ul{
+    width: 100%;
+    text-align: center;
+}
+header nav{
+    width: 2em;
+    height: 1em;
+    position: absolute;
+    top:calc(32px - 0.5em);
+    right:1em;
+}
+header nav .bar{
+    width: 100%;
+    height: 2px;
+    background-color: var(--darkBlackColor--);
+    position: absolute;
+    /* 中心點 */
+    transform-origin: 0 1px;
+}
+header nav .bar:nth-last-of-type(1){
+    top:0;
+}
+header nav .bar:nth-last-of-type(2){
+    top:calc(0.5em - 1px);
+}
+header nav .bar:nth-last-of-type(3){
+    bottom:0;
+}
+
+/* ==== theme設計(JS可選擇前後) === */
+/* 做float繞圖排文(浮塊)，要clear才能繼續使用*/
+.clear::after{
+    content:"";
+    clear: both;
+}
+#theme{
+    width:100%;
+    height:calc(100vh - 64px);
+}
+#theme #slide{
+    width:100%;
+    height: 100%;
+    /* 隱藏其他圖片(不讓全部圖片一次顯示出來) */
+    overflow:hidden;
+    position:relative;
+}
+#theme #slide .slide{
+    /* 要讓圖片展開在裡面 */
+    width:500%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: var(--transition--);
+}
+
+#theme #slide .slide .pic{
+    /* 因為父親是500% */
+    width: calc(100% / 5);
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    /* 靠左浮動 */
+    float: left;
+}
+#theme #slide .slide .pic:nth-of-type(1){
+    background-image: url(https://picsum.photos/id/217/1200/800);
+}
+#theme #slide .slide .pic:nth-of-type(2){
+    background-image: url(https://picsum.photos/id/243/1200/800);
+}
+#theme #slide .slide .pic:nth-of-type(3){
+    background-image: url(https://picsum.photos/id/247/1200/800);
+}
+#theme #slide .slide .pic:nth-of-type(4){
+    background-image: url(https://picsum.photos/id/289/1200/800);
+}
+#theme #slide .slide .pic:nth-of-type(5){
+    background-image: url(https://picsum.photos/id/317/1200/800);
+}
+
+#theme .box{
+    width: 100%;
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+    position: absolute;
+    bottom: 1em;
+    /* 圈圈位置 */
+    left: 0;
+}
+#theme .box input{
+    margin: 0 0.5em;
+}
+#theme .box input[type = "radio"]{
+    /* 修改顏色 */
+    accent-color: aqua;
+    width: 1.5em;
+    height: 1.5em;
+}
+/* 前一張、後一張 */
+#theme #pre,#theme #next{
+    font-size: 40px;
+    position: absolute;
+    /* 減header(高度在中間) */
+    top: calc(50vh - 64px);
+    color: #FFF;
+    /* 手指頭 */
+    cursor: pointer;
+    z-index: 5;
+    /* 半透明 */
+    opacity: 0.5;
+    transition: var(--transition--);
+}
+#theme #pre{
+    left:1em;
+}
+#theme #next{
+    right:1em;
+}
+#theme #pre:hover,#theme #next:hover{
+    opacity: 1;
+}
+/* 手機版 */
+#theme .push{
+    width: 280px;
+    font-size: 20px;
+    background-color: var(--alphaBlack--);
+    color: var(--lightGrayColor--);
+    padding: 1em;
+    position: absolute;
+    left: calc(50% - 140px);
+    top: calc(50vh - 6em);
+}
+#theme p{
+    margin: 0.6em 0;
+}
+/* === About設計 === */
+#about {
+    width:100%;
+    color: var(--lightBlackColor--);
+    background-color: var(--themeColor3--);
+}
+#about .grid-10{
+    padding:1em;
+}
+#about .grid-10 p{
+    text-align: justify;
+    padding: 0.5em 0;
+}
+
+#about .grid-10 i{
+    color: var(--themeColor--);
+}
+/* #about .flex{
+    justify-content: space-between;
+} */
+
+/* === certificate設計 === */
+#certificate{
+    width: 100%;
+}
+#certificate .grid-12{
+    background-color: var(--darkBlackColor--);
+    color: var(--lightGrayColor--);
+    text-align: center;
+    padding: 3em 2em;
+    line-height: 2.5em;
+}
+#certificate .grid-6{
+    position: relative;
+    overflow: hidden;
+    margin: 1em;
+}
+#certificate .grid-6 h3{
+    width: 100%;
+    height: 2.5em;
+    line-height: 2.5em;
+    text-align: center;
+    background-color: var(--alphaBlack--);
+    color: var(--lightGrayColor--);
+    position:absolute;
+    bottom: 0;
+}
+/* ==== portfolios設計 === */
+#portfolios{
+    width: 100%;
+    padding:3em 0;
+    color: var(--lightBlackColor--);
+    line-height: 2em;
+
+}
+#portfolios .flex{
+    padding:0 1em;
+}
+#portfolios .grid-10{
+    padding:2em 2em;
+    background-color: var(--themeColor3--);
+}
+#portfolios .grid-10 p{
+    text-align: justify; 
+    padding: 0.5em 0;
+}
+
+
+/* === show設計 === */
+#show{
+    width: 100%;
+    height:50vh;
+    background-image: url(https://picsum.photos/id/15/1200/600);
+    background-size: cover;
+    background-position: center;
+}
+#show.flex{
+    justify-content: flex-end;
+}
+#show .grid-12{
+    height:100%;
+    background-color: var(--alphaBlack--);
+    color: #FFF;
+    padding: 10vh 2.5em 0;
+}
+
+#show .grid-12 p{
+    padding:0.5em 0
+}
+
+
+
+/*=== active 設計 ===*/
+#active{
+    width: 100%;
+}
+#active .grid-12{
+    text-align: center;
+    padding: 3em 2em;
+    line-height: 2em;
+}
+#active .grid-12 h2{
+    padding: 1em 0;
+}
+#active .grid-12 p{
+    font-size: 16px;
+    letter-spacing: 1em;
+}
+#active .grid-10{
+    overflow: hidden;
+    position: relative;
+}
+#active .grid-10 .push{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--alphaBlack--);
+    color: var(--lightGrayColor--);
+    padding: calc(50% - 8em) 1.5em 0;
+    line-height: 1.5em;
+}
+/* ==== contact設計 === */
+#contact{
+    width: 100%;
+    background-color: var(--darkBlackColor--);
+    color: var(--lightGrayColor--);
+    /* 文字左右對齊 */
+    text-align: justify;
+    margin-top: 2em;
+}
+#contact .grid-10{
+    padding: 3em 1.5em;
+}
+#contact .grid-10 h3{
+    color: #FFF;
+    padding: 2em 0;
+}
+#contact .grid-10 p{
+    padding: 0.5em 0;
+}
+#contact .grid-10 table{
+    width: 100%;
+    padding: 0.5em 0;
+}
+#contact .grid-10 table tr td{
+    padding: 0.25em;
+}
+#contact .grid-10 a{
+    display: block;
+    padding: 0.5em 0;
+    color: var(--themeColor--);
+}
+#contact .grid-10 hr{
+    border: 1px solid #000;
+    margin: 1em 0;
+}
+/* === footer設計 === */
+footer{
+    width: 100%;
+    padding: 2em 1em;
+    text-align: center;
+    background-color: var(--blackColor--);
+    color: var(--lightGrayColor--);
+}
+@media only screen and (min-width: 320px){
+    #portfolios{
+        padding:3em 1em;
+    }
+}
+@media only screen and (min-width: 412px){
+    /* 選.grid ctrl+d */
+    .grid-sm-1{
+        /* 做12格 */
+        width: calc(100% /12*1);
+    }
+    .grid-sm-2{
+        width: calc(100% /12*2);
+    }
+    .grid-sm-3{
+        width: calc(100% /12*3);
+    }
+    .grid-sm-4{
+        width: calc(100% /12*4);
+    }
+    .grid-sm-5{
+        width: calc(100% /12*5);
+    }
+    .grid-sm-6{
+        width: calc(100% /12*6);
+    }
+    .grid-sm-7{
+        width: calc(100% /12*7);
+    }
+    .grid-sm-8{
+        width: calc(100% /12*8);
+    }
+    .grid-sm-9{
+        width: calc(100% /12*9);
+    }
+    .grid-sm-10{
+        width: calc(100% /12*10);
+    }
+    .grid-sm-11{
+        width: calc(100% /12*11);
+    }
+    .grid-sm-12{
+        width: calc(100% /12*12);
+    }
+}
+@media only screen and (min-width: 540px){}
+@media only screen and (min-width: 768px){
+    .grid-md-1{
+        /* 做12格 */
+        width: calc(100% /12*1);
+    }
+    .grid-md-2{
+        width: calc(100% /12*2);
+    }
+    .grid-md-3{
+        width: calc(100% /12*3);
+    }
+    .grid-md-4{
+        width: calc(100% /12*4);
+    }
+    .grid-md-5{
+        width: calc(100% /12*5);
+    }
+    .grid-md-6{
+        width: calc(100% /12*6);
+    }
+    .grid-md-7{
+        width: calc(100% /12*7);
+    }
+    .grid-md-8{
+        width: calc(100% /12*8);
+    }
+    .grid-md-9{
+        width: calc(100% /12*9);
+    }
+    .grid-md-10{
+        width: calc(100% /12*10);
+    }
+    .grid-md-11{
+        width: calc(100% /12*11);
+    }
+    .grid-md-12{
+        width: calc(100% /12*12);
+    }
+    /* ==== header設計(平板) === */
+    header{
+        display: flex;
+        background-color: var(--themeColor--);
+    }
+    header #logo{
+        width:30%;
+        text-align: center;
+    }
+    header menu{
+        width:70%;
+        display: block;
+        background-color: transparent;
+        color:var(--darkBlackColor--)
+    }
+    header menu ul{
+        display: flex;
+        justify-content: flex-end;
+    }
+    header menu ul li a{
+        display:block;
+        padding:0 1em;
+        transition: var(--transition--);
+    }
+    header menu ul li:hover a{
+        background-color: var(--themeColor1--);
+        font-weight: bolder;
+    }
+    header nav{
+        display: none;
+    }
+
+    /* ===theme 設計 JS=== */
+    #theme #pre,#theme #next{
+        font-size: 60px;
+    }
+
+    #theme .push{
+        width: 500px;
+        left: 8em;
+    }
+
+    /* === certificate設計 === */
+    #certificate .grid-6 img{
+        transition: var(--transition--);
+        filter: brightness(0.6);
+    }
+    #certificate .grid-6 h3{
+        transition: var(--transition--);
+        transform: translateY(3em);
+    }
+    #certificate .grid-6:hover img{
+        filter: brightness(1);
+    }
+    #certificate .grid-6:hover h3{
+        transform: translateY(0);
+    }
+
+    /* ==== portfolios設計 === */
+    #portfolios{
+        padding:3em;
+    }
+
+    /*=== SHOW 設計 ===*/
+    #show{
+        height: 30vh;
+    }
+    #show .grid-12{
+        padding: 10vh 2.5em 0;
+    }
+    /*=== active 設計 ===*/
+    #active .grid-12{
+        padding: 3em 10em;
+    }
+    #active .grid-10 .push{
+        margin-top: 10em;
+        opacity: 0;
+        transition: var(--transition--);
+    }
+    #active .grid-10:hover .push{
+        margin-top: 0;
+        opacity: 1;
+    }
+    /* === footer設計 === */
+    footer br{
+        display: none;
+    }
+}
+@media only screen and (min-width: 1024px){}
+@media only screen and (min-width: 1280px){
+    .grid-lg-1{
+        /* 做12格 */
+        width: calc(100% / 12 * 1);
+    }
+    .grid-lg-2{
+        width: calc(100% / 12 * 2);
+    }
+    .grid-lg-3{
+        width: calc(100% / 12 * 3);
+    }
+    .grid-lg-4{
+        width: calc(100% / 12 * 4);
+    }
+    .grid-lg-5{
+        width: calc(100% / 12 * 5);
+    }
+    .grid-lg-6{
+        width: calc(100% / 12 * 6);
+    }
+    .grid-lg-7{
+        width: calc(100% / 12 * 7);
+    }
+    .grid-lg-8{
+        width: calc(100% / 12 * 8);
+    }
+    .grid-lg-9{
+        width: calc(100% / 12 * 9);
+    }
+    .grid-lg-10{
+        width: calc(100% / 12 * 10);
+    }
+    .grid-lg-11{
+        width: calc(100% / 12 * 11);
+    }
+    .grid-lg-12{
+        width: calc(100% / 12 * 12);
+    }
+    /* === about設計 === */
+    #about .grid-md-5{
+        padding:1em 4em;
+    }
+    /* ==== contact設計 === */
+    #contact{
+        margin-top: 0;
+    }
+}
+@media only screen and (min-width: 1366px){}
+@media only screen and (min-width: 1440px){}
+@media only screen and (min-width: 1600px){
+    .grid-xl-1{
+        /* 做12格 */
+        width: calc(100% / 12 * 1);
+    }
+    .grid-xl-2{
+        width: calc(100% / 12 * 2);
+    }
+    .grid-xl-3{
+        width: calc(100% / 12 * 3);
+    }
+    .grid-xl-4{
+        width: calc(100% / 12 * 4);
+    }
+    .grid-xl-5{
+        width: calc(100% / 12 * 5);
+    }
+    .grid-xl-6{
+        width: calc(100% / 12 * 6);
+    }
+    .grid-xl-7{
+        width: calc(100% / 12 * 7);
+    }
+    .grid-xl-8{
+        width: calc(100% / 12 * 8);
+    }
+    .grid-xl-9{
+        width: calc(100% / 12 * 9);
+    }
+    .grid-xl-10{
+        width: calc(100% / 12 * 10);
+    }
+    .grid-xl-11{
+        width: calc(100% / 12 * 11);
+    }
+    .grid-xl-12{
+        width: calc(100% / 12 * 12);
+    }
+}
+@media only screen and (min-width: 1920px){}
